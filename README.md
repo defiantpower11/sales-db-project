@@ -1,61 +1,56 @@
 
 # sales-db-project
-Sales data analysis project built with Python and SQL, generating reports from relational databases.
 
-# Sales Database Analysis Project
+Sales data analysis project using Python and SQL, focused on reporting and relational database design.
 
-## Descripción
-Proyecto de análisis de ventas utilizando una base de datos relacional en PostgreSQL y Python para el consumo de datos.  
+This project demonstrates how to design a relational database, populate it with sample sales data, and generate analytical reports using SQL views and Python. It simulates a real-world workflow between a PostgreSQL database and a data analysis layer.
 
-El objetivo es calcular el gasto total por cliente utilizando una VIEW para simplificar
-consultas complejas con múltiples JOIN.
+## Tech Stack
+ Python
+ PostgreSQL
+ SQL (DDL, DML, Views)
+ pandas
+ SQLAlchemy
+ Git & GitHub
 
-## Tecnologías utilizadas
-PostgreSQL
-SQL (JOIN, VIEW, GROUP BY)
-Python
-pandas
-SQLAlchemy
-
-## Estructura del proyecto
+## Project Structure
 sales-db-project/
-├── output/              # Resultados generados (CSV)
-├── python/              # Scripts de Python
-├── sql/                 # Scripts SQL (schema, data, views)
-├── venv/                # Entorno virtual
+├── python/
+│   └── sales_analysis.py
+├── sql/
+│   ├── schema.sql
+│   ├── data.sql
+│   └── views.sql
+├── output/
+│   └── sales_report.csv
+├── README.md
 ├── .gitignore
-└── README.md
+└── requirements.txt
 
-## Base de datos
-`schema.sql`: definición de tablas y relaciones
-`data.sql`: inserción de datos de prueba
-`views.sql`: creación de la vista `customer_sales`
+## How to Run
+1. Create and activate a virtual environment  
+   python -m venv venv  
+   venv\Scripts\activate  
 
-La vista encapsula la lógica de negocio y permite consultas simples desde la aplicación.
+2. Install dependencies  
+   pip install -r requirements.txt  
 
-## Script en Python
-El script `sales_analysis.py`:
-se conecta a PostgreSQL usando SQLAlchemy
-consulta la vista `customer_sales`
-exporta los resultados a un archivo CSV
+3. Run SQL scripts in PostgreSQL (in order)  
+    schema.sql  
+    data.sql  
+    views.sql  
 
-## Resultado
-Se genera el archivo:
+4. Run the Python analysis  
+   python python/sales_analysis.py  
 
-sales_report.csv
+The script generates a CSV report in the output folder.
 
-con el total gastado por cada cliente.
+## Output
+ sales_report.csv: total amount spent per customer.
 
-## Cómo ejecutar el proyecto
-
-1. Crear la base de datos en PostgreSQL
-2. Ejecutar en orden:
-    `schema.sql`
-    `data.sql`
-    `views.sql`
-3. Activar el entorno virtual
-4. Ejecutar:
-
-```bash
-python python/sales_analysis.py
-533f987 (Initial sales database analysis project)
+## Skills Demonstrated
+ Relational database design
+ SQL joins and views
+ Python data analysis with pandas
+ Database connectivity using SQLAlchemy
+ Version control with Git
